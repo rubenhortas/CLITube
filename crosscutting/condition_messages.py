@@ -34,15 +34,15 @@ def print_exception(msg):
     print("{0} {1}".format(Tag.exception, msg))
 
 
-# def print_warning(msg):
-#     """
-#     print_warning(msg)
-#         Prints a warning message.
-#     Arguments:
-#         msg: (string) Warning message.
-#     """
-#
-#     print("{0} {1}".format(Tag.warning, msg))
+def print_warning(msg):
+    """
+    print_warning(msg)
+        Prints a warning message.
+    Arguments:
+        msg: (string) Warning message.
+    """
+
+    print("{0} {1}".format(Tag.warning, msg))
 
 
 def print_info(msg):

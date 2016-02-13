@@ -7,6 +7,16 @@
 """
 
 # VIDEO_PLAYER
-# Supported: mplayer and omxplayer
+# Supported: mplayer, omxplayer
 VIDEO_PLAYER = "mplayer"
-# VIDEO_PLAYER = "omxplayer"
+
+
+# USER AND PASSWORD
+# Yotube user and password
+USER = ""
+PASSWORD = ""
+
+# QUALITY
+# Options: high, low
+# Use low for slow networks and/or slow computers
+QUALITY = "high"
