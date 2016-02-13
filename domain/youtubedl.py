@@ -13,6 +13,7 @@ from application.handlers.error_handler import handle_error
 from application.handlers.exception_handler import handle_exception
 # from crosscutting.condition_messages import print_info
 from crosscutting.constants import COOKIE_FILE
+from crosscutting.constants import ENCODING
 
 
 # Network options
@@ -122,9 +123,12 @@ class Youtubedl:
 
             url, error = p.communicate()
 
-            if not error and not url:
-                return url
+            if error:
+                handle_error(error, False)
+
+            if url:
+                return "\"{0}\"".format(url.decode(ENCODING).strip())
             else:
-                handle_error("Error fetching youtube_url")
+                handle_error("Error fetching youtube_url", True)
         except Exception as e:
             handle_exception(e)

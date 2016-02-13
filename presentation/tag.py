@@ -20,7 +20,7 @@ class Tag:
     """
 
     debug = ">>"
-    error = "[{0}ERROR{1}]".format(Color.bold_red, Color.end)
+    error = "[{0}x{1}]".format(Color.bold_red, Color.end)
     exception = "[{0}EXCEPTION{1}]".format(Color.bold_red, Color.end)
     info = "[{0}*{1}]".format(Color.green, Color.end)
-    warning = "[{0}Warning{1}]".format(Color.bold_orange, Color.end)
+    warning = "[{0}!{1}]".format(Color.bold_orange, Color.end)
