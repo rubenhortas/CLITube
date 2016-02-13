@@ -14,8 +14,10 @@ from application.utils.python_utils import get_interpreter_version
 from crosscutting.clitube_messages import print_header, print_fetching
 from crosscutting.condition_messages import print_error
 from crosscutting.constants import REQUIRED_PYTHON_VERSION
+from domain.video_player import VideoPlayer
 from domain.youtubedl import Youtubedl
 from presentation.utils.screen import clear_screen
+from config import VIDEO_PLAYER
 
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, exit_signal_handler)
@@ -32,11 +34,13 @@ if __name__ == "__main__":
         args = parser.parse_args()
 
         youtube_url = args.url[0]
+
         youtubedl = Youtubedl(youtube_url)
+        video_player = VideoPlayer(VIDEO_PLAYER)
 
         print_header()
         print_fetching(youtube_url)
-        best_format = youtubedl.get_url()
+        url = youtubedl.get_url()
 
     else:
         print_error('Requires Python {0}'.format(REQUIRED_PYTHON_VERSION))
