@@ -13,7 +13,7 @@ class OMXplayer(VideoPlayer):
     name = "omxplayer"
 
     # TODO: Add flags
-    flags = "-f"
+    flags = ""
 
     def _get_command(self):
         return self.name + self.flags
