@@ -12,7 +12,6 @@ from .video_player import VideoPlayer
 class OMXplayer(VideoPlayer):
     name = "omxplayer"
 
-    # TODO: Add flags
     flags = ""
 
     def _get_command(self):

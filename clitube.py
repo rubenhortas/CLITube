@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
         parser = argparse.ArgumentParser(prog="CLITube")
         parser = argparse.ArgumentParser(description="Script to watch youtube videos from CLI in a video player")
-        parser.add_argument("youtube_url", metavar="YOUTUBE VIDEO URL", nargs=1, help="URL of the video on youtube.")
+        parser.add_argument("youtube_url", metavar="YOUTUBE_VIDEO_URL", nargs=1, help="URL of the video on youtube.")
         args = parser.parse_args()
 
         youtube_url = args.youtube_url[0]
