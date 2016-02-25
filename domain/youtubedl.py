@@ -11,10 +11,9 @@ import subprocess
 from application.handlers.error_handler import handle_error
 from application.handlers.exception_handler import handle_exception
 from crosscutting.constants import COOKIE_FILE
-from crosscutting.constants import ENCODING
+
 
 class Youtubedl:
-
     filesystem_options = [
         "--cookies"  # File to read cookies from and dump cookie jar in
     ]
@@ -42,7 +41,7 @@ class Youtubedl:
                 handle_error(error, False)
 
             if url:
-                return "\"{0}\"".format(url.decode(ENCODING).strip())
+                return "\"{0}\"".format(url.strip())
             else:
                 handle_error("Error fetching youtube_url", True)
         except Exception as e:

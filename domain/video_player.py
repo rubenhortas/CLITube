@@ -9,6 +9,7 @@ import os
 import subprocess
 
 from application.handlers.exception_handler import handle_exception
+from crosscutting.condition_messages import print_info
 
 
 class VideoPlayer(object):
@@ -20,6 +21,8 @@ class VideoPlayer(object):
 
     def play(self, url):
         try:
+            print_info("Playing {0}".format(url))
+
             command = "{0} {1}".format(self._get_command(), url)
             devnull = open(os.devnull, 'w')
 
