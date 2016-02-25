@@ -11,14 +11,12 @@ from crosscutting.condition_messages import print_warning
 
 
 def handle_error(error, ext):
-    msg = error.decode("UTF-8")
-
-    if msg.split()[0] == "WARNING:":
-        print_warning(msg.replace("WARNING:", "").strip())
-    elif msg.split[0] == "ERROR:":
-        print_error(msg.replace("ERROR:", "").strip())
+    if error.split()[0] == "WARNING:":
+        print_warning(error.replace("WARNING:", "").strip())
+    elif error.split[0] == "ERROR:":
+        print_error(error.replace("ERROR:", "").strip())
     else:
-        print(msg)
+        print(error)
 
     if ext:
         exit(1)
