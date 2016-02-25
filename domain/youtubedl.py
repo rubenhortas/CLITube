@@ -10,7 +10,7 @@ import subprocess
 
 from application.handlers.error_handler import handle_error
 from application.handlers.exception_handler import handle_exception
-from crosscutting.constants import COOKIE_FILE
+from crosscutting.constants import COOKIE_FILE, ENCODING
 
 
 class Youtubedl:
@@ -38,10 +38,10 @@ class Youtubedl:
             url, error = p.communicate()
 
             if error:
-                handle_error(error, False)
+                handle_error(str(error, ENCODING), False)
 
             if url:
-                return "\"{0}\"".format(url.strip())
+                return str(url.strip(), ENCODING)
             else:
                 handle_error("Error fetching youtube_url", True)
         except Exception as e:
