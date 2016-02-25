@@ -12,13 +12,12 @@ from crosscutting.constants import ENCODING
 
 
 def handle_error(error, ext):
-    msg = error.decode(ENCODING)
-    if msg.split()[0] == "WARNING:":
-        print_warning(msg.replace("WARNING:", "").strip())
-    elif msg.split()[0] == "ERROR:":
-        print_error(msg.replace("ERROR:", "").strip())
+    if error.split()[0] == b"WARNING:":
+        print_warning(error.replace(b"WARNING:", "").strip())
+    elif error.split()[0] == b"ERROR:":
+        print_error(error.replace(b"ERROR:", "").strip())
     else:
-        print(msg)
+        print(error)
 
     if ext:
         exit(1)
