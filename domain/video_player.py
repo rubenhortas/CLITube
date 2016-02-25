@@ -23,7 +23,7 @@ class VideoPlayer(object):
         try:
             print_info("Playing {0}".format(url))
 
-            command = "{0} {1}".format(self._get_command(), url)
+            command = "{0} \"{1}\"".format(self._get_command(), url)
             devnull = open(os.devnull, 'w')
 
             p = subprocess.Popen(command, stdout=devnull, stderr=devnull, shell=True)
