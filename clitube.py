@@ -15,7 +15,7 @@ from config import VIDEO_PLAYER
 from crosscutting.clitube_messages import print_header, print_fetching
 from crosscutting.condition_messages import print_error
 from crosscutting.constants import REQUIRED_PYTHON_VERSION
-from domain.ioc_factory_video_player import get_instance_of
+from domain.video_player_factory import get_instance_of
 from domain.youtubedl import Youtubedl
 from presentation.utils.screen import clear_screen
 
