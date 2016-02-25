@@ -8,15 +8,17 @@
 
 from crosscutting.condition_messages import print_error
 from crosscutting.condition_messages import print_warning
+from crosscutting.constants import ENCODING
 
 
 def handle_error(error, ext):
-    if error.split()[0] == "WARNING:":
-        print_warning(error.replace("WARNING:", "").strip())
-    elif error.split[0] == "ERROR:":
-        print_error(error.replace("ERROR:", "").strip())
+    msg = error.decode(ENCODING)
+    if msg.split()[0] == "WARNING:":
+        print_warning(msg.replace("WARNING:", "").strip())
+    elif msg.split()[0] == "ERROR:":
+        print_error(msg.replace("ERROR:", "").strip())
     else:
-        print(error)
+        print(msg)
 
     if ext:
         exit(1)
