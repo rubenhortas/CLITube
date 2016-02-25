@@ -15,7 +15,7 @@ from config import VIDEO_PLAYER
 from crosscutting.clitube_messages import print_header, print_fetching
 from crosscutting.condition_messages import print_error
 from crosscutting.constants import REQUIRED_PYTHON_VERSION
-from domain.ioc_factory_video_player import get_instance_of
+from domain.video_player_factory import get_instance_of
 from domain.youtubedl import Youtubedl
 from presentation.utils.screen import clear_screen
 
@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
         parser = argparse.ArgumentParser(prog="CLITube")
         parser = argparse.ArgumentParser(description="Script to watch youtube videos from CLI in a video player")
-        parser.add_argument("youtube_url", metavar="YOUTUBE VIDEO URL", nargs=1, help="URL of the video on youtube.")
+        parser.add_argument("youtube_url", metavar="YOUTUBE_VIDEO_URL", nargs=1, help="URL of the video on youtube.")
         args = parser.parse_args()
 
         youtube_url = args.youtube_url[0]
