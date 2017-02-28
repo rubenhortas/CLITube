@@ -21,7 +21,7 @@ class VideoPlayer(object):
 
     def play(self, url):
         try:
-            print_info("Playing from {0}".format(url))
+            print_info("Playing {0}".format(url))
 
             command = "{0} \"{1}\"".format(self._get_command(), url)
             devnull = open(os.devnull, 'w')

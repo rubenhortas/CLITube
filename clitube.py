@@ -21,9 +21,6 @@ from domain.youtubedl import Youtubedl
 from presentation.utils.screen import clear_screen
 
 YOUTUBE_PATTERN = re.compile("(http(s)?://www.youtube.com/watch\?v=(\w)*)")
-URL_PATTERN = re.compile(
-    "(?P<video_url>http(s)?://www.youtube.com/watch\?v=(\w)*)&list=(?P<list>(\w)*)&index=(?P<index>(\d)*)")
-
 
 def __is_youtube(url):
     match = YOUTUBE_PATTERN.search(url)
@@ -31,14 +28,6 @@ def __is_youtube(url):
         return True
     else:
         return False
-
-
-def __clean_url(url):
-    match = URL_PATTERN.search(url)
-    if match:
-        return match.group('video_url')
-    else:
-        return url
 
 
 if __name__ == "__main__":
@@ -58,13 +47,12 @@ if __name__ == "__main__":
         user_url = args.youtube_url[0]
 
         if __is_youtube(user_url):
-            youtube_url = __clean_url(user_url)
 
-            youtubedl = Youtubedl(youtube_url)
+            youtubedl = Youtubedl(user_url)
             video_player = get_instance_of(VIDEO_PLAYER)
 
             print_header()
-            print_fetching(youtube_url)
+            print_fetching(user_url)
             real_video_url = youtubedl.get_url()
             video_player.play(real_video_url)
         else:
