@@ -22,6 +22,7 @@ from presentation.utils.screen import clear_screen
 
 YOUTUBE_PATTERN = re.compile("(http(s)?://www.youtube.com/watch\?v=(\w)*)")
 
+
 def __is_youtube(url):
     match = YOUTUBE_PATTERN.search(url)
     if match:

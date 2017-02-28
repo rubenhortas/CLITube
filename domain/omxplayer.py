@@ -13,5 +13,9 @@ class OMXplayer(VideoPlayer):
     name = "omxplayer"
     flags = ""
 
-    def _get_command(self):
+    def __init__(self):
+        self.name = "omxplayer"
+        self.flags = ""
+
+    def __get_command(self):
         return self.name + self.flags
