@@ -60,13 +60,13 @@ if __name__ == "__main__":
         if __is_youtube(user_url):
             youtube_url = __clean_url(user_url)
 
-            youtubedl = Youtubedl(user_url)
+            youtubedl = Youtubedl(youtube_url)
             video_player = get_instance_of(VIDEO_PLAYER)
 
             print_header()
             print_fetching(user_url)
-            video_url = youtubedl.get_url()
-            video_player.play(video_url)
+            real_video_url = youtubedl.get_url()
+            video_player.play(real_video_url)
         else:
             print_error('Is not a youtube video')
     else:
