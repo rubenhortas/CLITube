@@ -64,7 +64,7 @@ if __name__ == "__main__":
             video_player = get_instance_of(VIDEO_PLAYER)
 
             print_header()
-            print_fetching(user_url)
+            print_fetching(youtube_url)
             real_video_url = youtubedl.get_url()
             video_player.play(real_video_url)
         else:
