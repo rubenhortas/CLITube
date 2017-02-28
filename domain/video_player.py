@@ -16,7 +16,7 @@ class VideoPlayer(object):
     name = None
     flags = None
 
-    def __get_command(self):
+    def _get_command(self):
         raise Exception("Not implemented")
 
     def play(self, url):
@@ -24,7 +24,7 @@ class VideoPlayer(object):
             print_info("Using " + self.name)
             print_info("Playing {0}".format(url))
 
-            command = "{0} \"{1}\"".format(self.__get_command(), url)
+            command = "{0} \"{1}\"".format(self._get_command(), url)
             devnull = open(os.devnull, 'w')
 
             p = subprocess.Popen(command, stdout=devnull, stderr=devnull, shell=True)
