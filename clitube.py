@@ -36,7 +36,7 @@ def __is_youtube(url):
 def __clean_url(url):
     match = URL_PATTERN.search(url)
     if match:
-        return match.group(0)
+        return match.group('video_url')
     else:
         return url
 
