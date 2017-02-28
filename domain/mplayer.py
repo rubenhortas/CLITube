@@ -12,7 +12,7 @@ from .video_player import VideoPlayer
 
 class Mplayer(VideoPlayer):
     name = "mplayer"
-    flags = "{0} -fs -really-quiet -cookies -cookies-file {1}".format(name, COOKIE_FILE)
+    flags = "-fs -really-quiet -cookies -cookies-file {1}".format(COOKIE_FILE)
 
     def _get_command(self):
-        return self.flags
+        return "{0} -fs -really-quiet -cookies -cookies-file".format(self.name)

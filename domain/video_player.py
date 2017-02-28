@@ -21,6 +21,7 @@ class VideoPlayer(object):
 
     def play(self, url):
         try:
+            print_info("Using {0}").format(self.name)
             print_info("Playing {0}".format(url))
 
             command = "{0} \"{1}\"".format(self._get_command(), url)
