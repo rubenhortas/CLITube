@@ -13,15 +13,15 @@ from crosscutting.condition_messages import print_info
 
 
 class VideoPlayer(object):
-    #name = None
-    #flags = None
+    name = None
+    flags = None
 
     def _get_command(self):
         raise Exception("Not implemented")
 
     def play(self, url):
         try:
-            print_info("Using {0}").format(self.name)
+            #print_info("Using {0}").format(self.name)
             print_info("Playing {0}".format(url))
 
             command = "{0} \"{1}\"".format(self._get_command(), url)
