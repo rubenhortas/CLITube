@@ -13,8 +13,8 @@ from crosscutting.condition_messages import print_info
 
 
 class VideoPlayer(object):
-    name = None
-    flags = None
+    #name = None
+    #flags = None
 
     def _get_command(self):
         raise Exception("Not implemented")
