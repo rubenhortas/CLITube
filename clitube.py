@@ -20,17 +20,6 @@ from domain.video_player_factory import get_instance_of
 from domain.youtubedl import Youtubedl
 from presentation.utils.screen import clear_screen
 
-YOUTUBE_PATTERN = re.compile("(http(s)?://www.youtube.com/watch\?v=(\w)*)")
-
-
-def __is_youtube(url):
-    match = YOUTUBE_PATTERN.search(url)
-    if match:
-        return True
-    else:
-        return False
-
-
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, exit_signal_handler)
 
@@ -39,7 +28,6 @@ if __name__ == "__main__":
     interpreter_version = get_interpreter_version()
 
     if interpreter_version == REQUIRED_PYTHON_VERSION:
-
         parser = argparse.ArgumentParser(prog="CLITube")
         parser = argparse.ArgumentParser(description="Script to watch youtube videos from CLI in a video player")
         parser.add_argument("youtube_url", metavar="YOUTUBE_VIDEO_URL", nargs=1, help="URL of the video on youtube.")
@@ -47,17 +35,13 @@ if __name__ == "__main__":
 
         user_url = args.youtube_url[0]
 
-        if __is_youtube(user_url):
+        youtubedl = Youtubedl(user_url)
+        video_player = get_instance_of(VIDEO_PLAYER)
 
-            youtubedl = Youtubedl(user_url)
-            video_player = get_instance_of(VIDEO_PLAYER)
-
-            print_header()
-            print_fetching(user_url)
-            real_video_url = youtubedl.get_url()
-            video_player.play(real_video_url)
-        else:
-            print_error('Is not a youtube video')
-    else:
-        print_error('Requires Python {0}'.format(REQUIRED_PYTHON_VERSION))
-        exit(0)
+        print_header()
+        print_fetching(user_url)
+        real_video_url = youtubedl.get_url()
+        video_player.play(real_video_url)
+else:
+    print_error('Requires Python {0}'.format(REQUIRED_PYTHON_VERSION))
+    exit(0)
