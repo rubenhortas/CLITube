@@ -44,6 +44,6 @@ if __name__ == "__main__":
         print_fetching(user_url)
         real_video_url = youtubedl.get_url()
         video_player.play(real_video_url)
-else:
-    print_error('Requires Python {0}'.format(REQUIRED_PYTHON_VERSION))
-    exit(0)
+    else:
+        print_error('Requires Python {0}'.format(REQUIRED_PYTHON_VERSION))
+        exit(0)
