@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 @author:  Rubén Hortas Astariz <http://rubenhortas.blogspot.com>
 @contact: rubenhortas at gmail.com

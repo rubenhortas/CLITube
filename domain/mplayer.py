@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# _*_ coding:utf-8 _*
+
 """
 @author:  Rubén Hortas Astariz <http://rubenhortas.blogspot.com>
 @contact: rubenhortas at gmail.com

@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# _*_ coding:utf-8 _*
+
 """
 @author:  Rubén Hortas Astariz <http://rubenhortas.blogspot.com>
 @contact: rubenhortas at gmail.com
@@ -7,7 +10,6 @@
 """
 
 import argparse
-import re
 import signal
 
 from application.utils.python_utils import exit_signal_handler
