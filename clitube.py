@@ -1,14 +1,5 @@
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*
-
-"""
-@author:  Rubén Hortas Astariz <http://rubenhortas.blogspot.com>
-@contact: rubenhortas at gmail.com
-@github:  http://github.com/rubenhortas
-@license: CC BY-NC-SA 3.0 <http://creativecommons.org/licenses/by-nc-sa/3.0/>
-@file:    clitube  
-"""
-
 import argparse
 import re
 import signal
@@ -24,7 +15,7 @@ from domain.youtubedl import Youtubedl
 from presentation.utils.screen import clear_screen
 
 YOUTUBE_VIDEO_PATTERN = re.compile("http[s]?://www.youtube.com/watch\?v=[a-zA-Z0-9]+")
-#https://www.youtube.com/watch?v=iSYcAxD0VM4&list=PLC520AA0C7DF76087&index=3
+# https://www.youtube.com/watch?v=iSYcAxD0VM4&list=PLC520AA0C7DF76087&index=3
 
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, exit_signal_handler)
