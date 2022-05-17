@@ -14,4 +14,4 @@ Useful for computers without interface.
       -h, --help         show this help message and exit
 	  
 ## Support
-If you find this script useful you can star this repo.
+If you find this application useful you can star this repo.
