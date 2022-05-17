@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# _*_ coding:utf-8 _*
 from application.handlers.exception_handler import handle_exception
 from domain.mplayer import Mplayer
 from domain.omxplayer import OMXplayer

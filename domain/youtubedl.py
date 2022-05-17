@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# _*_ coding:utf-8 _*
 import subprocess
 
 from application.handlers.error_handler import handle_error
